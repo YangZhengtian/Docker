@@ -6,18 +6,18 @@
 
 ## 运行：
 * >docker network create -d bridge roachnet
-* >docker run -d --name=roach1 --hostname=roach1 --net=roachnet -P 26257:26257 -p 3306:3306 -v C:\Users\yzt\docker\roach:/cockroach/winston cockroachdb/cockroach:v1.0.4 start --insecure
+* >docker run -d --name=roach1 --hostname=roach1 --net=roachnet -p 26257:26257 -p 3306:3306 -v C:\Users\yzt\docker\roach:/cockroach/roach1 cockroachdb/cockroach:v1.0.4 start --insecure
 
 
 ## 进入：
 * >docker start winston
-* >docker exec -it winston ./cockroach sql --insecure
+* >docker exec -it roach1 ./cockroach sql --insecure
 
 
 ## 创建用户:
  ```sql
 CREATE USER core_acc WITH PASSWORD 'J8Mct1UxL5';
-```
+ ```
 
 ## 用户授权:
 ```sql
